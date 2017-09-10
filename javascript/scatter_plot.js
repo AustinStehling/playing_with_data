@@ -10,6 +10,7 @@ d3.csv("../csv/world_median_age.csv")
       console.log(data)
       let height = 350;
       let width = 800;
+      padding = 50;
 
       let maxAge = d3.max(data, (data) => { return data.Age; });
       let minAge = d3.min(data, (data) => { return data.Age; });
@@ -21,10 +22,10 @@ d3.csv("../csv/world_median_age.csv")
 
       let y = d3.scaleLinear()
                 .domain([minAge - 10, maxAge + 10])
-                .range([height, 0]);
+                .range([height-padding, padding]);
       let x = d3.scaleLog()
                 .domain([minGdp - 50, maxGdp + 25000])
-                .range([0, width]);
+                .range([padding, width-padding]);
       let r = d3.scaleSqrt()
                 .domain([minRatio, maxRatio])
                 .range([3, 15])
@@ -32,7 +33,7 @@ d3.csv("../csv/world_median_age.csv")
       let yAxis = d3.axisLeft(y);
       let xAxis = d3.axisBottom(x);
 
-      let svg = d3.select('body').append('svg')
+      let svg = d3.select('section').append('svg')
                   .attr('height', '100%')
                   .attr('width', '100%')
                   .append('g')
@@ -60,7 +61,7 @@ d3.csv("../csv/world_median_age.csv")
                 div.transition()
                   .duration(200)
                   .style('opacity', 1);
-                div.html(data.Country + ', gdp(ppp): $' + data.gdp)
+                div.html(data.Country + ', GDP(PPP): $' + data.gdp)
                   .style("left", (d3.event.pageX) + 'px')
                   .style("top", (d3.event.pageY) + 'px');
                 })
@@ -70,7 +71,29 @@ d3.csv("../csv/world_median_age.csv")
                   .style('opacity', 0);
               });
 
-      svg.append('g').attr('class', 'x axis').attr('transform', 'translate(0, '+height+')').call(xAxis)
-      svg.append('g').attr('class', 'y axis').call(yAxis)
+      svg.append('g')
+        .attr('class', 'x axis')
+        .attr('transform', 'translate(0, '+(height - padding)+')')
+        .call(xAxis)
+
+      svg.append('g')
+        .attr('class', 'y axis')
+        .attr('transform', 'translate('+padding+', 0)')
+        .call(yAxis)
+
+      svg.append('text')
+        .attr('text-anchor', 'middle')
+        .attr('transform', 'translate('+10+', '+(height/2)+')rotate(-90)')
+        .text('Median Age')
+
+      svg.append('text')
+        .attr('text-anchor', 'middle')
+        .attr('transform', 'translate( '+(width/2)+','+height+')')
+        .text('GDP (PPP)')
+
+      svg.append('text')
+        .attr('text-anchor', 'middle')
+        .attr('transform', 'translate( '+(width/2)+','+0+')')
+        .text('Countries: Median Age vs Spending Power')
 
   });
