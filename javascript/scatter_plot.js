@@ -9,7 +9,7 @@ d3.csv("../csv/world_median_age.csv")
   .get((error, data)=> {
       console.log(data)
       let height = 350;
-      let width = 1200;
+      let width = 800;
 
       let maxAge = d3.max(data, (data) => { return data.Age; });
       let minAge = d3.min(data, (data) => { return data.Age; });
@@ -23,11 +23,11 @@ d3.csv("../csv/world_median_age.csv")
                 .domain([minAge - 10, maxAge + 10])
                 .range([height, 0]);
       let x = d3.scaleLog()
-                .domain([minGdp - 50, maxGdp + 250])
+                .domain([minGdp - 50, maxGdp + 25000])
                 .range([0, width]);
       let r = d3.scaleSqrt()
                 .domain([minRatio, maxRatio])
-                .range([10, 50])
+                .range([3, 15])
 
       let yAxis = d3.axisLeft(y);
       let xAxis = d3.axisBottom(x);
@@ -42,86 +42,34 @@ d3.csv("../csv/world_median_age.csv")
                   .attr('class', 'tooltip')
                   .style('opacity', 0);
 
-      // let voronoi = d3.voronoi()
-      //                 .x((data) => { return x(data.Income); })
-      //                 .y((data) => { return y(data.Homeless); })
-      //                 .size([width, height])(data);
+      let colors = d3.scaleOrdinal(d3.schemeBlues[9]);
 
-      let colors = d3.scaleOrdinal(d3.schemeSet1);
+      svg.selectAll('circle')
+        .data(data)
+        .enter()
+        .append('circle')
+        .attr('class', (data, index) => { return data.Country })
+        .attr('cy', (data) => { return y(data.Age); })
+        .attr('cx', (data) => { return x(data.gdp); })
+        .attr('r', (data) => { return r(data.gdp); })
+        .attr('stroke','black')
+        .attr('stroke-width',1)
+        .attr('opacity', 0.8)
+        .attr('fill', (data) => { return colors(data.Country)})
+            .on('mouseover', (data) => {
+                div.transition()
+                  .duration(200)
+                  .style('opacity', 1);
+                div.html(data.Country + ', gdp(ppp): $' + data.gdp)
+                  .style("left", (d3.event.pageX) + 'px')
+                  .style("top", (d3.event.pageY) + 'px');
+                })
+              .on('mouseout', (data) => {
+                div.transition()
+                  .duration(500)
+                  .style('opacity', 0);
+              });
 
-      let chartGroup = svg.selectAll('circle')
-                        .data(data)
-                        .enter()
-                        .append('circle')
-                        .attr('class', (data, index) => { return data.Country })
-                        .attr('cy', (data) => { return y(data.Age); })
-                        .attr('cx', (data) => { return x(data.gdp); })
-                        .attr('r', 10)
-                        // .attr('r', (data) => { return r(data.gdp); })
-                        // .attr('stroke','black')
-                        .attr('stroke-width',1)
-                        .attr('opacity', 0.8)
-                        .attr('fill', (data) => { return colors(data.Country)})
-                            .on('mouseover', (data) => {
-                                div.transition()
-                                  .duration(200)
-                                  .style('opacity', 1);
-                                div.html(data.Country)
-                                  .style("left", (d3.event.pageX) + 'px')
-                                  .style("top", (d3.event.pageY) + 'px');
-                                })
-                              .on('mouseout', (data) => {
-                                div.transition()
-                                  .duration(500)
-                                  .style('opacity', 0);
-                              });
-
-
-      //   .on('mouseover', (data) => {
-      //       div.transition()
-      //         .duration(200)
-      //         .style('opacity', 1);
-      //       div.html(data.State)
-      //         .style("left", (d3.event.pageX) + 'px')
-      //         .style("top", (d3.event.pageY) + 'px');
-      //       })
-      //     .on('mouseout', (data) => {
-      //       div.transition()
-      //         .duration(500)
-      //         .style('opacity', 0);
-      //     });
-
-      // svg.selectAll('circle.groupSmall')
-      //   .data(data)
-      //   .enter()
-      //   .append('circle')
-      //   .attr('class', 'groupSmall')
-      //   .attr('cy', (data) => { return y(data.Temperature); })
-      //   .attr('cx', (data) => { return x(data.Income); })
-      //   .attr('r', (data) => { return r(data.Homeless); })
-      //   .attr('stroke','black')
-      //   .attr('stroke-width',1)
-      //
-      // let line = d3.line()
-      //               .x((data) => { return x(data.Temperature); })
-      //               .y((data) => { return y(data.Income); })
-
-      // let line2 = d3.line()
-      //               .x((data) => { return x(data.Date); })
-      //               .y((data) => { return y(data.Families); })
-      //
-      // let line3 = d3.line()
-      //               .x((data) => { return x(data.Date); })
-      //               .y((data) => { return y(data.Singles); })
-      //
-      // let line4 = d3.line()
-      //               .x((data) => { return x(data.Date); })
-      //               .y((data) => { return y(data.Couples); })
-
-      // chartGroup.append('path').attr('d', line(data));
-      // chartGroup.append('path').attr('d', line2(data));
-      // chartGroup.append('path').attr('d', line3(data));
-      // chartGroup.append('path').attr('d', line4(data));
       svg.append('g').attr('class', 'x axis').attr('transform', 'translate(0, '+height+')').call(xAxis)
       svg.append('g').attr('class', 'y axis').call(yAxis)
 
