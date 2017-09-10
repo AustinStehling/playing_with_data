@@ -43,7 +43,7 @@ d3.csv('../csv/bordering_states.csv')
         .attr('cy', (d) => { return d.y; })
       }
 
-      var force = d3.layout.force()
+      let force = d3.layout.force()
         .size([width, height])
         .nodes(nodes)
         .links(data)
