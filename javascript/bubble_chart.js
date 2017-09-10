@@ -7,8 +7,8 @@ d3.csv('../csv/homeless_population.csv')
   })
   .get((error, data) => {
 
-    let width = 1000;
-    let height = 650;
+    let width = 650;
+    let height = 600;
 
     let maxRadius = d3.max(data, (data) => { return data.PercentHomeless; })
     let minRadius = d3.min(data, (data) => { return data.PercentHomeless; })
@@ -42,7 +42,7 @@ d3.csv('../csv/homeless_population.csv')
                 .data(data)
                 .enter()
                 .append('text')
-                .text(d => d.State)
+                .text((data) => { return data.State; } )
                 .attr('color', 'black')
                 .attr('font-size', 10)
 

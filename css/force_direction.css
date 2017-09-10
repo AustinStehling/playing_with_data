@@ -15,6 +15,24 @@
   justify-content: space-between;
 }
 
+ul {
+  padding: 0;
+  list-style-type: none;
+  background: antiquewhite;
+  border-radius: 10px;
+}
+li {
+  padding: 5px;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+}
+
+a {
+  font-size: 20px;
+  color: blue;
+}
+
 .body-force {
   background: antiquewhite;
 }
@@ -52,19 +70,21 @@ div.tooltip {
 }
 section {
   width: 600px;
-  border-radius: 80px;
+  border-radius: 10px;
   background-color: black;
 }
 
 .force-aside {
-  padding-top: 40px;
   color: black;
   width: 300px;
   margin-right: 50px;
   border: 1px solid black;
   text-align: center;
   background: lightseagreen;
-  border-radius: 80px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
 a.anchor-force {
@@ -91,6 +111,19 @@ a.button {
   background: lightseagreen;
   border-radius: 10px;
   justify-content: space-between;
+}
+
+.uni-footer {
+  border: 1px solid black;
+  height: 30px;
+  width: 98%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  background: lightseagreen;
+  border-radius: 10px;
+  justify-content: space-between;
+  margin-top: 30px;
 }
 
 .header-div {
