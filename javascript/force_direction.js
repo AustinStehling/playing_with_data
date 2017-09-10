@@ -51,6 +51,7 @@ d3.csv('../csv/bordering_states.csv')
         .stop()
         .start();
 
+
       let link = svg.selectAll('.link')
         .data(data)
         .enter()
@@ -80,6 +81,7 @@ d3.csv('../csv/bordering_states.csv')
             .style('opacity', 0);
         })
         .call(force.drag);
+
 
       node.append("text")
         .attr("x", 12)
