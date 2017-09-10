@@ -34,12 +34,12 @@ div.tooltip {
     text-align: center;
     min-width: 60px;
     min-height: 20px;
-    padding: 2px;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5px;
     font: 14px sans-serif;
     color: white;
     background: lightcoral;
-    border: 0px;
-    border-radius: 3px;
     pointer-events: none;
     text-align: center;
 
@@ -55,10 +55,7 @@ section {
   border-radius: 80px;
   background-color: black;
 }
-/*
-rect {
-  border-radius: 30px;
-}*/
+
 .force-aside {
   padding-top: 40px;
   color: black;
@@ -75,8 +72,6 @@ a.anchor-force {
 }
 
 a.button {
-  /*-webkit-appearance: button;
-  -moz-appearance: button;*/
   appearance: button;
 
   text-decoration: none;
@@ -104,8 +99,6 @@ a.button {
 }
 
 a.button-three {
-  /*-webkit-appearance: button;
-  -moz-appearance: button;*/
   appearance: button;
 
   text-decoration: none;
@@ -116,8 +109,6 @@ a.button-three {
 
 }
 a.button-two {
-    /*-webkit-appearance: button;
-    -moz-appearance: button;*/
     appearance: button;
 
     text-decoration: none;

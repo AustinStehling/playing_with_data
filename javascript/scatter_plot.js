@@ -57,43 +57,46 @@ d3.csv("../csv/world_median_age.csv")
         .attr('stroke-width',1)
         .attr('opacity', 0.8)
         .attr('fill', (data) => { return colors(data.Country)})
-            .on('mouseover', (data) => {
-                div.transition()
-                  .duration(200)
-                  .style('opacity', 1);
-                div.html(data.Country + ', GDP(PPP): $' + data.gdp)
-                  .style("left", (d3.event.pageX) + 'px')
-                  .style("top", (d3.event.pageY) + 'px');
-                })
-              .on('mouseout', (data) => {
-                div.transition()
-                  .duration(500)
-                  .style('opacity', 0);
-              });
+        .on('mouseover', (data) => {
+            div.transition()
+              .duration(200)
+              .style('opacity', 1);
+            div.html(data.Country + ', GDP(PPP): $' + data.gdp)
+              .style("left", (d3.event.pageX) + 'px')
+              .style("top", (d3.event.pageY) + 'px');
+            })
+          .on('mouseout', (data) => {
+            div.transition()
+              .duration(500)
+              .style('opacity', 0);
+          });
 
       svg.append('g')
-        .attr('class', 'x axis')
+        .attr('class', 'axis')
         .attr('transform', 'translate(0, '+(height - padding)+')')
         .call(xAxis)
 
       svg.append('g')
-        .attr('class', 'y axis')
+        .attr('class', 'axis')
         .attr('transform', 'translate('+padding+', 0)')
         .call(yAxis)
 
       svg.append('text')
         .attr('text-anchor', 'middle')
-        .attr('transform', 'translate('+10+', '+(height/2)+')rotate(-90)')
+        .attr('transform', 'translate('+5+', '+(height/2)+')rotate(-90)')
+        .attr('font-size', 25)
         .text('Median Age')
 
       svg.append('text')
         .attr('text-anchor', 'middle')
         .attr('transform', 'translate( '+(width/2)+','+height+')')
+        .attr('font-size', 25)
         .text('GDP (PPP)')
 
       svg.append('text')
         .attr('text-anchor', 'middle')
-        .attr('transform', 'translate( '+(width/2)+','+0+')')
+        .attr('transform', 'translate( '+(width/2)+','+-5+')')
+        .attr('font-size', 25)
         .text('Countries: Median Age vs Spending Power')
 
   });

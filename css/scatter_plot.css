@@ -4,11 +4,29 @@ html, body {
   background-color: #90AFC5;
 }
 
+ul {
+  padding: 0;
+  list-style-type: none;
+  background: antiquewhite;
+  border-radius: 10px;
+}
+li {
+  padding: 5px;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+}
+
+a {
+  font-size: 20px;
+  color: blue;
+}
+
 .main-scatter-div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .scatter-div {
@@ -41,12 +59,12 @@ section {
     min-width: 40px;
     min-height: 20px;
     padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
     font: 14px sans-serif;
     color: white;
     text-align: center;
     background: #336B87;
-    border: 1px solid black;
-    border-radius: 5px;
     pointer-events: none;
     text-align: center;
 }
@@ -54,7 +72,7 @@ section {
 .uni-header {
   border: 1px solid black;
   height: 30px;
-  width: 87%;
+  width: 88%;
   padding: 8px;
   border-radius: 10px;
   margin-bottom: 40px;
@@ -65,8 +83,6 @@ section {
 }
 
 a.button {
-  /*-webkit-appearance: button;
-  -moz-appearance: button;*/
   appearance: button;
 
   text-decoration: none;
@@ -82,8 +98,6 @@ a.button {
 }
 
 a.button-three {
-  /*-webkit-appearance: button;
-  -moz-appearance: button;*/
   appearance: button;
 
   text-decoration: none;
@@ -94,8 +108,6 @@ a.button-three {
 
 }
 a.button-two {
-    /*-webkit-appearance: button;
-    -moz-appearance: button;*/
     appearance: button;
 
     text-decoration: none;
@@ -106,7 +118,7 @@ a.button-two {
 }
 
 .scatter-aside {
-  padding-top: 40px;
+  padding: 10px;
   color: black;
   width: 300px;
   margin-right: 50px;
@@ -114,4 +126,10 @@ a.button-two {
   text-align: center;
   background: #336B87;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.axis {
+  font-size: 15px;
 }

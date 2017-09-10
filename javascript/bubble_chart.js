@@ -1,0 +1,63 @@
+d3.csv('../csv/homeless_population.csv')
+  .row((data) => {
+    return {
+      State: data.State,
+      PercentHomeless: Number(data.Homeless) / Number(data.Population)
+    };
+  })
+  .get((error, data) => {
+
+    let width = 1000;
+    let height = 650;
+
+    let maxRadius = d3.max(data, (data) => { return data.PercentHomeless; })
+    let minRadius = d3.min(data, (data) => { return data.PercentHomeless; })
+
+    let svg = d3.selectAll('section')
+               .append('svg')
+               .attr('height', height)
+               .attr('width', width)
+               .append('g')
+               .attr('transform', 'translate(0, 0)')
+
+    let colors = d3.scaleOrdinal(d3.schemePaired);
+
+    let simulation = d3.forceSimulation()
+                      .force('x', d3.forceX(width/2).strength(0.5))
+                      .force('y', d3.forceY(height/2).strength(0.5))
+                      .force('collide', d3.forceCollide((data) => { return r(data.PercentHomeless) + 3; }))
+
+    let r = d3.scaleSqrt()
+              .domain([minRadius, maxRadius])
+              .range([15,75])
+
+    let circles = svg.selectAll('circles')
+                  .data(data)
+                  .enter()
+                  .append('circle')
+                  .attr('fill', (data) => { return colors(data.State); })
+                  .attr('r', (data) => { return r(data.PercentHomeless); })
+
+   let texts = svg.selectAll(null)
+                .data(data)
+                .enter()
+                .append('text')
+                .text(d => d.State)
+                .attr('color', 'black')
+                .attr('font-size', 10)
+
+
+    let ticked = () => {
+      circles
+        .attr('cx', (data) => { return data.x; })
+        .attr('cy', (data) => { return data.y; })
+      texts
+        .attr('x', (data) => { return data.x; })
+        .attr('y', (data) => { return data.y;  })
+    };
+
+    simulation.nodes(data)
+      .on('tick', ticked)
+
+
+  });
