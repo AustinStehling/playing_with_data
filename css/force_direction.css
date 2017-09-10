@@ -1,0 +1,116 @@
+.link {
+  stroke-width: 1px;
+  stroke: antiquewhite;
+}
+
+.uni-header {
+  border: 1px solid black;
+  height: 30px;
+  width: 98%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  background: lightseagreen;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.body-force {
+  background: antiquewhite;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+line  {
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    min-width: 60px;
+    min-height: 20px;
+    padding: 2px;
+    font: 14px sans-serif;
+    color: white;
+    background: lightcoral;
+    border: 0px;
+    border-radius: 3px;
+    pointer-events: none;
+    text-align: center;
+
+}
+
+.force-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+section {
+  width: 600px;
+  border-radius: 80px;
+  background-color: black;
+}
+/*
+rect {
+  border-radius: 30px;
+}*/
+.force-aside {
+  padding-top: 40px;
+  color: black;
+  width: 300px;
+  margin-right: 50px;
+  border: 1px solid black;
+  text-align: center;
+  background: lightseagreen;
+  border-radius: 80px;
+}
+
+a.anchor-force {
+  font-size: 20px;
+}
+
+a.button {
+  /*-webkit-appearance: button;
+  -moz-appearance: button;*/
+  appearance: button;
+
+  text-decoration: none;
+  color: initial;
+  font-size: 35px;
+  background: lightseagreen;
+
+}
+
+.header-div {
+  display: flex;
+  align-items: center;
+}
+
+a.button-three {
+  /*-webkit-appearance: button;
+  -moz-appearance: button;*/
+  appearance: button;
+
+  text-decoration: none;
+  color: initial;
+  font-size: 20px;
+  margin-left: 10px;
+  background: lightseagreen;
+
+}
+a.button-two {
+    /*-webkit-appearance: button;
+    -moz-appearance: button;*/
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+    padding-left: 10px;
+    font-size: 35px;
+    background: lightseagreen;
+}

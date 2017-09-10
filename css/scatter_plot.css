@@ -1,0 +1,31 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+line  {
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+path {
+  stroke: steelblue;
+  stroke-width: 1px;
+  fill: none;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    min-width: 60px;
+    min-height: 20px;
+    padding: 2px;
+    font: 14px sans-serif;
+    color: white;
+    background: steelblue;
+    border: 0px;
+    border-radius: 0px;
+    pointer-events: none;
+    text-align: center;
+
+}
