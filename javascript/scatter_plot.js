@@ -1,30 +1,29 @@
 
-d3.csv("../csv/homeless_population.csv")
-  .row((data)=> {return { State: data.State,
-                          Homeless: Number(data.Homeless),
-                          Population: Number(data.Population),
-                          Temperature: Number(data.Temperature),
-                          Income: Number(data.Income),
-                          Location: Number(data.Location)
-                        };})
+d3.csv("../csv/world_median_age.csv")
+  .row((data) => { return {
+      Country: data.country,
+      Age: Number(data.age),
+      gdp: Number(data.gdp)
+    };
+  })
   .get((error, data)=> {
-
+      console.log(data)
       let height = 350;
-      let width = 1000;
+      let width = 1200;
 
-      let maxPop = d3.max(data, (data) => { return data.Homeless; });
-      let minPop = d3.min(data, (data) => { return data.Homeless; });
-      let maxIncome = d3.max(data, (data) => { return data.Income; });
-      let minIncome = d3.min(data, (data) => { return data.Income; });
-      let maxRatio = d3.max(data, (data)=> { return data.Homeless / data.Population; });
-      let minRatio = d3.min(data, (data)=> { return data.Homeless / data.Population; });
+      let maxAge = d3.max(data, (data) => { return data.Age; });
+      let minAge = d3.min(data, (data) => { return data.Age; });
+      let maxGdp = d3.max(data, (data) => { return data.gdp; });
+      let minGdp = d3.min(data, (data) => { return data.gdp; });
+      let maxRatio = d3.max(data, (data)=> { return data.gdp; });
+      let minRatio = d3.min(data, (data)=> { return data.gdp; });
 
 
-      let y = d3.scaleLog()
-                .domain([minPop - 10, maxPop + 10])
+      let y = d3.scaleLinear()
+                .domain([minAge - 10, maxAge + 10])
                 .range([height, 0]);
       let x = d3.scaleLog()
-                .domain([minIncome - 1000, maxIncome + 3000])
+                .domain([minGdp - 50, maxGdp + 250])
                 .range([0, width]);
       let r = d3.scaleSqrt()
                 .domain([minRatio, maxRatio])
@@ -54,19 +53,20 @@ d3.csv("../csv/homeless_population.csv")
                         .data(data)
                         .enter()
                         .append('circle')
-                        .attr('class', (data, index) => { return data.State })
-                        .attr('cy', (data) => { return y(data.Homeless); })
-                        .attr('cx', (data) => { return x(data.Income); })
-                        .attr('r', (data) => { return r(data.Homeless / data.Population); })
+                        .attr('class', (data, index) => { return data.Country })
+                        .attr('cy', (data) => { return y(data.Age); })
+                        .attr('cx', (data) => { return x(data.gdp); })
+                        .attr('r', 10)
+                        // .attr('r', (data) => { return r(data.gdp); })
                         // .attr('stroke','black')
                         .attr('stroke-width',1)
                         .attr('opacity', 0.8)
-                        .attr('fill', (data) => { return colors(data.Location)})
+                        .attr('fill', (data) => { return colors(data.Country)})
                             .on('mouseover', (data) => {
                                 div.transition()
                                   .duration(200)
                                   .style('opacity', 1);
-                                div.html(data.State)
+                                div.html(data.Country)
                                   .style("left", (d3.event.pageX) + 'px')
                                   .style("top", (d3.event.pageY) + 'px');
                                 })
