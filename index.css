@@ -10,8 +10,8 @@ body {
   height: 100%;
   width: 100%;
   background: steelblue;
-  display: flex;
-  justify-content: center;
+  /*display: flex;*/
+  /*justify-content: center;*/
 }
 
 ul {
@@ -38,7 +38,24 @@ li {
   align-items: center;
   background: #F9BA32;
   justify-content: space-between;
+  width: 47%;
 }
+
+.uni-footer {
+  border: 1px solid black;
+  height: 30px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  background: #F9BA32;
+  justify-content: space-between;
+  margin-top: 30px;
+  width: 47%;
+}
+
 
 a.button {
   appearance: button;
@@ -59,6 +76,14 @@ a.button-three {
   color: initial;
   font-size: 20px;
   margin-left: 10px;
+  background: #F9BA32;
+}
+
+a.button-three-top {
+  appearance: button;
+  text-decoration: none;
+  color: initial;
+  font-size: 20px;
   background: #F9BA32;
 }
 
@@ -85,8 +110,10 @@ a.button-two {
 
 p {
   width: 300px;
-  font-size: 18px;
+  font-size: 21px;
   color: black;
+  padding: 0;
+  margin: 0;
 }
 
 .main-aside {
