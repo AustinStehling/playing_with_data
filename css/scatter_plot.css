@@ -99,9 +99,9 @@ html {
   display: flex;
   justify-content: center;
 }
+
 a.button {
   appearance: button;
-
   text-decoration: none;
   color: initial;
   font-size: 35px;
@@ -116,7 +116,6 @@ a.button {
 
 a.button-three {
   appearance: button;
-
   text-decoration: none;
   color: initial;
   font-size: 20px;
@@ -126,7 +125,6 @@ a.button-three {
 }
 a.button-two {
     appearance: button;
-
     text-decoration: none;
     color: initial;
     padding-left: 10px;

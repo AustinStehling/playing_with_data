@@ -1,0 +1,111 @@
+html {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: steelblue;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background: steelblue;
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  text-align: center;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+
+
+.uni-header {
+  border: 1px solid black;
+  height: 30px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  background: #F9BA32;
+  justify-content: space-between;
+}
+
+a.button {
+  appearance: button;
+  text-decoration: none;
+  color: initial;
+  font-size: 35px;
+  background: #F9BA32;
+}
+
+.header-div {
+  display: flex;
+  align-items: center;
+}
+
+a.button-three {
+  appearance: button;
+  text-decoration: none;
+  color: initial;
+  font-size: 20px;
+  margin-left: 10px;
+  background: #F9BA32;
+}
+
+a.button-two {
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+    padding-left: 10px;
+    font-size: 35px;
+    background: #F9BA32;
+}
+
+.main-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+p {
+  width: 300px;
+  font-size: 18px;
+  color: black;
+}
+
+.main-aside {
+  margin-right: 20px;
+  background-color: #F8F1E5;
+  padding: 10px;
+  height: 430px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+img {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.parent-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
