@@ -82,9 +82,4 @@ d3.csv('../csv/bordering_states.csv')
         })
         .call(force.drag);
 
-
-      node.append("text")
-        .attr("x", 12)
-        .attr("dy", ".35em")
-        .text((d) => { return d.name; })
   });
