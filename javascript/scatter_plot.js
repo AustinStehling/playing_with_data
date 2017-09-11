@@ -7,7 +7,6 @@ d3.csv("../csv/world_median_age.csv")
     };
   })
   .get((error, data)=> {
-      console.log(data)
       let height = 350;
       let width = 800;
       padding = 50;
