@@ -26,12 +26,12 @@ d3.csv('../csv/bordering_states.csv')
                   .attr('width', '100%')
                   .attr('height', height)
 
-      svg.append('text')
-        .attr('x', 137)
-        .attr('y', 100)
-        .attr('font-size', 30)
-        .attr('fill', 'lightcoral')
-        .text('States and Their Neighbors')
+      // svg.append('text')
+      //   .attr('x', 137)
+      //   .attr('y', 100)
+      //   .attr('font-size', 30)
+      //   .attr('fill', 'lightcoral')
+      //   .text('States and Their Neighbors')
 
       let tick = () => {
         link.attr('x1', (d) => { return d.source.x; })
@@ -47,6 +47,8 @@ d3.csv('../csv/bordering_states.csv')
         .size([width, height])
         .nodes(nodes)
         .links(data)
+        .charge(-200)
+        .linkDistance(50)
         .on('tick', tick)
         .stop()
         .start();
@@ -63,23 +65,36 @@ d3.csv('../csv/bordering_states.csv')
         .enter()
         .append('circle')
         .attr('class', 'node')
-        .attr('r', 7)
-        .attr('fill', 'lightseagreen')
+        .attr('r', 15)
+        .attr('fill', '#1E656D')
         .attr('stroke', 'black')
         .attr('stroke-width', 1)
-        .on('mouseover', (data) => {
-          div.transition()
-            .duration(200)
-            .style('opacity', 1);
-          div.html(data.name)
-            .style("left", (d3.event.pageX) + 'px')
-            .style("top", (d3.event.pageY) + 'px');
-          })
-        .on('mouseout', (data) => {
-          div.transition()
-            .duration(500)
-            .style('opacity', 0);
-        })
+        .on('mouseover', circleBig)
+        .on('mouseout', circleSmall)
         .call(force.drag);
+
+
+          function circleBig (data) {
+            d3.select(this)
+            .attr('r', 25)
+            .style('fill', '#F62A00')
+
+            div.transition()
+              .duration(200)
+              .style('opacity', 1);
+            div.html(data.name)
+              .style("left", (d3.event.pageX) + 'px')
+              .style("top", (d3.event.pageY) + 'px');
+          }
+
+          function circleSmall (data) {
+            d3.select(this)
+            .attr('r', 15)
+            .style('fill', "#1E656D")
+
+            div.transition()
+              .duration(500)
+              .style('opacity', 0);
+          }
 
   });

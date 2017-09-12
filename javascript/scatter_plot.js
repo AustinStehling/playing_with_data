@@ -56,19 +56,33 @@ d3.csv("../csv/world_median_age.csv")
         .attr('stroke-width',1)
         .attr('opacity', 0.8)
         .attr('fill', (data) => { return colors(data.Country)})
-        .on('mouseover', (data) => {
-            div.transition()
-              .duration(200)
-              .style('opacity', 1);
-            div.html(data.Country + ', GDP(PPP): $' + data.gdp)
-              .style("left", (d3.event.pageX) + 'px')
-              .style("top", (d3.event.pageY) + 'px');
-            })
-          .on('mouseout', (data) => {
-            div.transition()
-              .duration(500)
-              .style('opacity', 0);
-          });
+        .on('mouseover', mouseOn)
+        .on('mouseout', mouseOut);
+
+      function mouseOn(data) {
+        d3.select(this)
+          .attr('r', r(data.gdp) * 2.5)
+          .style('opacity', 1)
+          .style('fill', 'yellow')
+
+        div.transition()
+          .duration(200)
+          .style('opacity', 1);
+        div.html(data.Country + ', GDP(PPP): $' + data.gdp)
+          .style("left", (d3.event.pageX) + 'px')
+          .style("top", (d3.event.pageY) + 'px');
+      }
+
+      function mouseOut(data) {
+        d3.select(this)
+          .attr('r', r(data.gdp))
+          .style('opacity', 0.8)
+          .style('fill', colors(data.Country))
+
+        div.transition()
+          .duration(500)
+          .style('opacity', 0);
+      }
 
       svg.append('g')
         .attr('class', 'axis')

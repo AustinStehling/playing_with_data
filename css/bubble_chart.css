@@ -29,11 +29,17 @@ ul {
   background: #F1F1F2;
   border-radius: 10px;
 }
+
 li {
-  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
   color: black;
   font-size: 20px;
   text-align: center;
+}
+
+li:last-child {
+  padding-bottom: 5px;
 }
 
 a {
@@ -100,6 +106,10 @@ section {
   padding: 10px;
   display: flex;
   align-items: center;
+}
+
+.title {
+  font-size: 24px;
 }
 
 html {
