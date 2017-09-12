@@ -112,6 +112,21 @@ section {
   font-size: 24px;
 }
 
+.tooltip {
+    position: absolute;
+    text-align: center;
+    min-width: 60px;
+    min-height: 20px;
+    padding: 3px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font: 16px;
+    color: black;
+    background: lightcoral;
+    pointer-events: none;
+    text-align: center;
+}
+
 html {
   display: flex;
   justify-content: center;

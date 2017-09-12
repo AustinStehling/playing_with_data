@@ -15,7 +15,8 @@ d3.csv('../csv/bordering_states.csv')
           (nodesList[link.target] = { name: link.target });
       });
 
-      let div = d3.select('body').append('div')
+      let div = d3.select('body')
+                .append('div')
                 .attr('class', 'tooltip')
                 .style('opacity', 0);
 
