@@ -62,7 +62,7 @@ d3.csv("../csv/world_median_age.csv")
 
       function mouseOn(data) {
         circles
-          .style('opacity', 0.1)
+          .style('opacity', 0.3)
 
         d3.select(this)
           .attr('r', r(data.gdp) * 2)
