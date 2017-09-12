@@ -1,4 +1,4 @@
-d3.csv('../csv/homeless_population.csv')
+d3.csv('./csv/homeless_population.csv')
   .row((data) => {
     return {
       State: data.State,

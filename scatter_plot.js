@@ -1,5 +1,5 @@
 
-d3.csv("../csv/world_median_age.csv")
+d3.csv("./csv/world_median_age.csv")
   .row((data) => { return {
       Country: data.country,
       Age: Number(data.age),

@@ -1,4 +1,4 @@
-d3.csv('../csv/bordering_states.csv')
+d3.csv('./csv/bordering_states.csv')
   .row((data) => { return { source: data.source,
                             target: data.target
                          };})
