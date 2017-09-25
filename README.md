@@ -12,7 +12,7 @@ I undertook this project to learn the d3.js library. I carefully selected public
 
 #### Select one of the graphs from the menu.
 
-* “Bordering State;” nodes are drag-able.
+* “Bordering States;” nodes are drag-able.
 * “Percent Homeless;” force changes on bubbles with mouseover.
 * “Are Younger Countries Richer;” countries are highlighted with mouseover.
 
