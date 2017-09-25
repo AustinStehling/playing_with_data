@@ -100,12 +100,30 @@ a.button-two {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.bw-img {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.about-me {
+  width: 50%;
+  background-color: #F8F1E5;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 18px;
 }
 
 .bio-div {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 50%;
+  height: 50%;
 }
 
 p {
