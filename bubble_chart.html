@@ -3,27 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="../css/bubble_chart.css">
+    <link rel="stylesheet" type="text/css" href="./css/bubble_chart.css">
     <script src="https://d3js.org/d3-voronoi.v1.min.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/font-awesome/css/font-awesome.min.css">
   </head>
   <header class="uni-header">
-    <div class="header-div">
-      <a href="http://www.austinstehling.com" class="button"><i class="fa fa-globe" aria-hidden="true"></i></a>
-      <a href="http://www.austinstehling.com" class="button-three">Austin Stehling</a>
-    </div>
+    <a class="button-three" href="index.html">Home</a>
     <div class="">
-      <a href="https://www.linkedin.com/in/astehling/" class="button-two"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-      <a href="https://github.com/AustinStehling" class="button-two"><i class="fa fa-github" aria-hidden="true"></i></a>
-      <a href="https://angel.co/austin-stehling?al_content=view+your+profile&al_source=transaction_feed%2Fnetwork_sidebar" class="button-two"><i class="fa fa-angellist" aria-hidden="true"></i></a>
+      <a class="button-three" href="scatter_plot.html">• Are Younger Countries Richer?</a>
+      <a class="button-three" href="force_direction.html">• Bordering States</a>
     </div>
   </header>
   <body class='body-bubble'>
     <div class="bubble-div">
       <aside class="bubble-aside">
         <ul>
+          <li><p class='title'>Percent Homeless</p></li>
           <li>
             <p>
               In this bubble chart, each bubble represents one of the 50 states. The radius for each bubble was calculated based on the total population of that particular state and the percentage of the population that was currently homeless on any given night in 2016. I would like to begin creating data visualizations to bring awareness to issues in society I feel need more awareness. My hope is to inspire people to make a positive impact in their communities regarding these issues.
@@ -41,12 +38,19 @@
         </ul>
       </aside>
       <section>
-        <script type="text/javascript" src='../javascript/bubble_chart.js'></script>
+        <script type="text/javascript" src='bubble_chart.js'></script>
       </section>
     </div>
   </body>
   <footer class="uni-footer">
-    <a class="button-three" href="scatter_plot.html">Are Younger Countries Richer?</a>
-    <a class="button-three" href="force_direction.html">Bordering States</a>
+    <div class="header-div">
+      <a href="http://www.austinstehling.com" class="button"><i class="fa fa-globe" aria-hidden="true"></i></a>
+      <a href="http://www.austinstehling.com" class="button-three">Austin Stehling</a>
+    </div>
+    <div class="">
+      <a href="https://www.linkedin.com/in/astehling/" class="button-two"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      <a href="https://github.com/AustinStehling" class="button-two"><i class="fa fa-github" aria-hidden="true"></i></a>
+      <a href="https://angel.co/austin-stehling?al_content=view+your+profile&al_source=transaction_feed%2Fnetwork_sidebar" class="button-two"><i class="fa fa-angellist" aria-hidden="true"></i></a>
+    </div>
   </footer>
 </html>

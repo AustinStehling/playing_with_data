@@ -1,5 +1,5 @@
 
-d3.csv("../csv/world_median_age.csv")
+d3.csv("./csv/world_median_age.csv")
   .row((data) => { return {
       Country: data.country,
       Age: Number(data.age),
@@ -7,7 +7,6 @@ d3.csv("../csv/world_median_age.csv")
     };
   })
   .get((error, data)=> {
-      console.log(data)
       let height = 350;
       let width = 800;
       padding = 50;
@@ -39,37 +38,59 @@ d3.csv("../csv/world_median_age.csv")
                   .append('g')
                   .attr('transform', 'translate(50, 50)');
 
-      let div = d3.select('body').append('div')
+      let div = d3.select('body')
+                  .append('div')
                   .attr('class', 'tooltip')
                   .style('opacity', 0);
 
       let colors = d3.scaleOrdinal(d3.schemeBlues[9]);
 
-      svg.selectAll('circle')
-        .data(data)
-        .enter()
-        .append('circle')
-        .attr('class', (data, index) => { return data.Country })
-        .attr('cy', (data) => { return y(data.Age); })
-        .attr('cx', (data) => { return x(data.gdp); })
-        .attr('r', (data) => { return r(data.gdp); })
-        .attr('stroke','black')
-        .attr('stroke-width',1)
-        .attr('opacity', 0.8)
-        .attr('fill', (data) => { return colors(data.Country)})
-        .on('mouseover', (data) => {
-            div.transition()
-              .duration(200)
-              .style('opacity', 1);
-            div.html(data.Country + ', GDP(PPP): $' + data.gdp)
-              .style("left", (d3.event.pageX) + 'px')
-              .style("top", (d3.event.pageY) + 'px');
-            })
-          .on('mouseout', (data) => {
-            div.transition()
-              .duration(500)
-              .style('opacity', 0);
-          });
+      let circles = svg.selectAll('circle')
+                      .data(data)
+                      .enter()
+                      .append('circle')
+                      .attr('class', (data, index) => { return data.Country })
+                      .attr('cy', (data) => { return y(data.Age); })
+                      .attr('cx', (data) => { return x(data.gdp); })
+                      .attr('r', (data) => { return r(data.gdp); })
+                      .attr('stroke','black')
+                      .attr('stroke-width',1)
+                      .attr('opacity', 0.8)
+                      .attr('fill', (data) => { return colors(data.Country)})
+                      .on('mouseover', mouseOn)
+                      .on('mouseout', mouseOut);
+
+      function mouseOn(data) {
+        circles
+          .style('opacity', 0.3)
+
+        d3.select(this)
+          .attr('r', r(data.gdp) * 2)
+          .style('opacity', 1)
+          .style('fill', 'darkorange')
+
+        div.transition()
+          .duration(200)
+          .style('opacity', 1);
+        div.html(data.Country + ', GDP(PPP): $' + data.gdp)
+          .style("left", (d3.event.pageX) + 'px')
+          .style("top", (d3.event.pageY) + 'px');
+
+      }
+
+      function mouseOut(data) {
+        d3.select(this)
+          .attr('r', r(data.gdp))
+          .style('opacity', 0.8)
+          .style('fill', colors(data.Country))
+
+        circles
+          .style('opacity', 0.8)
+
+        div.transition()
+          .duration(500)
+          .style('opacity', 0);
+      }
 
       svg.append('g')
         .attr('class', 'axis')
