@@ -10,7 +10,7 @@ I undertook this project to learn the d3.js library. I carefully selected public
 
 ### Instructions
 
-##### Select one of the graphs from the menu.
+#### Select one of the graphs from the menu.
 
 * “Bordering State;” nodes are drag-able.
 * “Percent Homeless;” force changes on bubbles with mouseover.
