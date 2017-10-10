@@ -5,22 +5,46 @@
     <script type="text/javascript"></script>
     <script type="text/javascript"></script>
     <link rel="stylesheet" href="./css/force_direction.css">
+    <link rel="stylesheet" href="./css/nav.css">
     <script src="https://d3js.org/d3-voronoi.v1.min.js"></script>
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <link rel="stylesheet" href="./css/font-awesome/css/font-awesome.min.css">
     <title></title>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <button class="ddbutton">Graphs
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="ddcontent">
+          <a href="bubble_chart.html">Percent Homeless</a>
+          <a href="scatter_plot.html">Are Younger Countries Richer?</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="ddbutton">Austin
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="ddcontent">
+          <a target="_blank" href="http://www.austinstehling.com"><i class="fa fa-globe" aria-hidden="true"></i> Austin Stehling</a>
+          <a target="_blank" href="https://www.linkedin.com/in/astehling/"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <a target="_blank" href="https://github.com/AustinStehling"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+          <a target="_blank" href="https://angel.co/austin-stehling?al_content=view+your+profile&al_source=transaction_feed%2Fnetwork_sidebar"><i class="fa fa-angellist" aria-hidden="true"></i> AngelList</a>
+        </div>
+      </div>
+    </nav>
   </head>
-  <header class="uni-header">
+  <!-- <header class="uni-header">
     <a class="button-three" href="index.html">Home</a>
     <div class="">
       <a class="button-three" href="scatter_plot.html">• Are Younger Countries Richer?</a>
       <a class="button-three" href="bubble_chart.html">• Percent Homeless</a>
     </div>
-  </header>
+  </header> -->
   <body class='body-force'>
     <div class="force-div">
-      <aside class="force-aside">
+      <!-- <aside class="force-aside">
         <ul>
           <li>
             <p class='title'>States and Their Neighbors</p>
@@ -31,13 +55,13 @@
             </p>
           </li>
         </ul>
-      </aside>
+      </aside> -->
       <section>
         <script type="text/javascript" src="force_direction.js"></script>
       </section>
     </div>
   </body>
-  <footer class="uni-footer">
+  <!-- <footer class="uni-footer">
     <div class="header-div">
       <a href="http://www.austinstehling.com" class="button"><i class="fa fa-globe" aria-hidden="true"></i></a>
       <a href="http://www.austinstehling.com" class="button-three">Austin Stehling</a>
@@ -47,5 +71,5 @@
       <a href="https://github.com/AustinStehling" class="button-two"><i class="fa fa-github" aria-hidden="true"></i></a>
       <a href="https://angel.co/austin-stehling?al_content=view+your+profile&al_source=transaction_feed%2Fnetwork_sidebar" class="button-two"><i class="fa fa-angellist" aria-hidden="true"></i></a>
     </div>
-  </footer>
+  </footer> -->
 </html>

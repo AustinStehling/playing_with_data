@@ -3,8 +3,8 @@ d3.csv('./csv/bordering_states.csv')
                             target: data.target
                          };})
   .get((error, data) => {
-      let height = 600;
-      let width = 600;
+      let height = 1000;
+      let width = 1000;
 
       var nodesList = {}
 
@@ -24,7 +24,7 @@ d3.csv('./csv/bordering_states.csv')
 
       let svg = d3.selectAll('section')
                   .append('svg')
-                  .attr('width', '100%')
+                  .attr('width', "100%")
                   .attr('height', height)
 
       // svg.append('text')
@@ -48,8 +48,8 @@ d3.csv('./csv/bordering_states.csv')
         .size([width, height])
         .nodes(nodes)
         .links(data)
-        .charge(-200)
-        .linkDistance(50)
+        .charge(-350)
+        .linkDistance(80)
         .on('tick', tick)
         .stop()
         .start();
@@ -66,8 +66,8 @@ d3.csv('./csv/bordering_states.csv')
         .enter()
         .append('circle')
         .attr('class', 'node')
-        .attr('r', 15)
-        .attr('fill', '#1E656D')
+        .attr('r', 25)
+        .attr('fill', '#1253A4')
         .attr('stroke', 'black')
         .attr('stroke-width', 1)
         .on('mouseover', circleBig)
@@ -77,8 +77,8 @@ d3.csv('./csv/bordering_states.csv')
 
           function circleBig (data) {
             d3.select(this)
-            .attr('r', 25)
-            .style('fill', '#F62A00')
+            .attr('r', 40)
+            .style('fill', '#F26964')
 
             div.transition()
               .duration(200)
@@ -90,8 +90,8 @@ d3.csv('./csv/bordering_states.csv')
 
           function circleSmall (data) {
             d3.select(this)
-            .attr('r', 15)
-            .style('fill', "#1E656D")
+            .attr('r', 25)
+            .style('fill', "#1253A4")
 
             div.transition()
               .duration(500)

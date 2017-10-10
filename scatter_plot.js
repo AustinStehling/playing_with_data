@@ -7,8 +7,8 @@ d3.csv("./csv/world_median_age.csv")
     };
   })
   .get((error, data)=> {
-      let height = 350;
-      let width = 800;
+      let height = 600;
+      let width = 1000;
       padding = 50;
 
       let maxAge = d3.max(data, (data) => { return data.Age; });
@@ -67,7 +67,7 @@ d3.csv("./csv/world_median_age.csv")
         d3.select(this)
           .attr('r', r(data.gdp) * 2)
           .style('opacity', 1)
-          .style('fill', 'darkorange')
+          .style('fill', '#F26964')
 
         div.transition()
           .duration(200)

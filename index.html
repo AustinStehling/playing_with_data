@@ -2,17 +2,41 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/font-awesome/css/font-awesome.min.css">
+    <link target="_blank" rel="stylesheet" href="./css/index.css">
+    <link target="_blank" rel="stylesheet" href="./css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/nav.css">
     <title></title>
+    <nav id="nav">
+      <div class="dropdown">
+        <button class="ddbutton">Graphs
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="ddcontent">
+          <a href="bubble_chart.html">Percent Homeless</a>
+          <a href="force_direction.html">Bordering States</a>
+          <a href="scatter_plot.html">Are Younger Countries Richer?</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="ddbutton">About
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="ddcontent">
+          <a target="_blank" href="http://www.austinstehling.com"><i class="fa fa-globe" aria-hidden="true"></i> Austin Stehling</a>
+          <a target="_blank" href="https://www.linkedin.com/in/astehling/"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <a target="_blank" href="https://github.com/AustinStehling"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+          <a target="_blank" href="https://angel.co/austin-stehling?al_content=view+your+profile&al_source=transaction_feed%2Fnetwork_sidebar"><i class="fa fa-angellist" aria-hidden="true"></i> AngelList</a>
+        </div>
+      </div>
+    </nav>
   </head>
   <body>
     <div class="parent-div">
-      <header class="uni-header">
+      <!-- <header class="uni-header">
         <a class="button-three-top" href="bubble_chart.html">• Percent Homeless</a>
         <a class="button-three-top" href="force_direction.html">• Bordering States</a>
         <a class="button-three-top" href="scatter_plot.html">• Are Younger Countries Richer?</a>
-      </header>
+      </header> -->
       <div class="main-div">
         <div class="bio-div">
           <img class='bw-img' src="./images/pr_bw.jpg" alt="">
@@ -21,17 +45,14 @@
           Hi I’m Austin! The following project was intended to help me learn the d3.js library. Please poke around!
         </div>
       </div>
-      <footer class="uni-footer">
-        <div class="header-div">
-          <a href="http://www.austinstehling.com" class="button"><i class="fa fa-globe" aria-hidden="true"></i></a>
-          <a href="http://www.austinstehling.com" class="button-three">Austin Stehling</a>
-        </div>
-        <div class="">
-          <a href="https://www.linkedin.com/in/astehling/" class="button-two"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-          <a href="https://github.com/AustinStehling" class="button-two"><i class="fa fa-github" aria-hidden="true"></i></a>
-          <a href="https://angel.co/austin-stehling?al_content=view+your+profile&al_source=transaction_feed%2Fnetwork_sidebar" class="button-two"><i class="fa fa-angellist" aria-hidden="true"></i></a>
-        </div>
-      </footer>
     </div>
+    <!-- <footer class="uni-footer">
+      <div class="header-div">
+        <a href="http://www.austinstehling.com" class="button"><i class="fa fa-globe" aria-hidden="true"></i></a>
+      </div>
+      <div class="">
+      </div>
+    </footer> -->
   </body>
+  <!-- <script type="text/javascript" src="./javascript/javascript.js"></script> -->
 </html>
