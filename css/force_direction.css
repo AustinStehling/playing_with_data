@@ -3,23 +3,10 @@
   padding: 0;
 }
 
-
 .link {
   stroke-width: 1px;
-  stroke: #F4F4F2;
+  stroke: #F26964;
 }
-
-/*.uni-header {
-  border: 1px solid black;
-  height: 30px;
-  width: 98%;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  background: #1E656D;
-  border-radius: 10px;
-  justify-content: space-between;
-}*/
 
 ul {
   padding: 0;
@@ -42,7 +29,7 @@ a {
 }
 
 .body-force {
-  background: #F4F4F2;
+  background: #F26964;
 }
 
 line  {
@@ -74,87 +61,26 @@ div.tooltip {
 
 section {
   width: 1000px;
-  /*border-radius: 10px;*/
-}
-
-/*.force-aside {
-  color: black;
-  width: 300px;
-  margin-right: 50px;
+  background: #F4F4F2;
   border: 1px solid black;
-  text-align: center;
-  background: #1E656D;
-  border-radius: 10px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-a.anchor-force {
-  font-size: 20px;
-}
-
-a.button {
-  appearance: button;
-  text-decoration: none;
-  color: initial;
-  font-size: 35px;
-  background: #1E656D;
-}*/
-
-/*.uni-header {
-  border: 1px solid black;
-  height: 30px;
-  width: 98%;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  background: #1E656D;
-  border-radius: 10px;
-  justify-content: space-between;
-}
-
-.uni-footer {
-  border: 1px solid black;
-  height: 30px;
-  width: 98%;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  background: #1E656D;
-  border-radius: 10px;
-  justify-content: space-between;
   margin-top: 30px;
-}*/
+  background-color: #FFD464;
+  box-shadow: -5px 2px grey,
+              -5px 2px grey,
+              -5px 2px grey,
+              -5px 2px grey,
+              -5px 2px grey;
+  margin-bottom: 20px;
+}
 
 .header-div {
   display: flex;
   align-items: center;
 }
 
-/*a.button-three {
-  appearance: button;
-  text-decoration: none;
-  color: initial;
-  font-size: 20px;
-  margin-left: 10px;
-  background: #1E656D;
-
-}
-a.button-two {
-    appearance: button;
-    text-decoration: none;
-    color: initial;
-    padding-left: 10px;
-    font-size: 35px;
-    background: #1E656D;
-}*/
-
 .title {
   font-size: 80px;
   letter-spacing: -3px;
   text-shadow: 1px 1px grey;
-  color: #F26964;
+  color: #F4F4F2;
 }

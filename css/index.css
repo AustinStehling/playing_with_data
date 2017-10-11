@@ -6,60 +6,13 @@
 html {
   height: 100%;
   width: 100%;
-  /*display: flex;
-  justify-content: center;
-  background: steelblue;*/
 }
 
 body {
   height: 100%;
   width: 100%;
   background: #F4F4F2;
-  /*display: flex;*/
-  /*justify-content: center;*/
 }
-
-/*.dropdown .ddbutton {
-  background-color: inherit;
-  color: white;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  padding: 5px;
-}
-
-.ddcontent {
-  display: none;
-  position: absolute;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.ddcontent a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-
-.dropdown:hover .ddcontent {
-  display: block;
-}
-
-#nav {
-  padding: 10px;
-  width: 100%;
-  margin: 0px;
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: flex-start;
-  background: #1253A4;
-}*/
 
 ul {
   padding: 0;
@@ -72,72 +25,9 @@ li {
   text-decoration: underline;
 }
 
-.uni-header {
-  border: 1px solid black;
-  height: 30px;
-  width: 100%;
-  padding: 8px;
-  /*border-radius: 10px;*/
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  background: #F9BA32;
-  justify-content: space-between;
-  width: 47%;
-}
-
-.uni-footer {
-  border: 1px solid black;
-  height: 30px;
-  width: 100%;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  background: #F9BA32;
-  justify-content: space-between;
-  margin-top: 50px;
-  bottom: 0;
-  position: relative;
-}
-
-
-a.button {
-  appearance: button;
-  text-decoration: none;
-  color: initial;
-  font-size: 35px;
-  background: #F9BA32;
-}
-
 .header-div {
   display: flex;
   align-items: center;
-}
-
-a.button-three {
-  appearance: button;
-  text-decoration: none;
-  color: initial;
-  font-size: 20px;
-  margin-left: 10px;
-  background: #F9BA32;
-}
-
-a.button-three-top {
-  appearance: button;
-  text-decoration: none;
-  color: initial;
-  font-size: 20px;
-  background: #F9BA32;
-}
-
-a.button-two {
-    appearance: button;
-    text-decoration: none;
-    color: initial;
-    padding-left: 10px;
-    font-size: 35px;
-    background: #F9BA32;
 }
 
 .main-div {
@@ -184,12 +74,10 @@ p {
   padding: 10px;
   height: 430px;
   border: 1px solid black;
-  /*border-radius: 10px;*/
 }
 
 img {
   border: 1px solid black;
-  /*border-radius: 10px;*/
 }
 
 .parent-div {

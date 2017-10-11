@@ -50,7 +50,6 @@ path {
 section {
   width: 1200px;
   height: 800px;
-  /*border-radius: 10px;*/
   border: 1px solid black;
   margin-top: 100px;
   background-color: #FFD464;
@@ -74,49 +73,9 @@ section {
     font: 14px sans-serif;
     color: white;
     text-align: center;
-    background: #336B87;
+    background: #F26964;
     pointer-events: none;
     text-align: center;
-}
-
-/*.uni-header {
-  border: 1px solid black;
-  height: 30px;
-  width: 100%;
-  padding: 8px;
-  border-radius: 10px;
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  background: #336B87;
-  justify-content: space-between;
-}
-.uni-footer {
-  border: 1px solid black;
-  height: 30px;
-  width: 100%;
-  padding: 8px;
-  border-radius: 10px;
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  background: #336B87;
-  justify-content: space-between;
-  margin-top: 30px;
-}*/
-
-/*html {
-  display: flex;
-  justify-content: center;
-}*/
-
-a.button {
-  appearance: button;
-  text-decoration: none;
-  color: initial;
-  font-size: 35px;
-  background: #336B87;
-
 }
 
 .header-div {
@@ -124,43 +83,8 @@ a.button {
   align-items: center;
 }
 
-a.button-three {
-  appearance: button;
-  text-decoration: none;
-  color: initial;
-  font-size: 20px;
-  margin-left: 10px;
-  background: #336B87;
-
-}
-a.button-two {
-    appearance: button;
-    text-decoration: none;
-    color: initial;
-    padding-left: 10px;
-    font-size: 35px;
-    background: #336B87;
-}
-
-.scatter-aside {
-  padding: 10px;
-  color: black;
-  width: 300px;
-  margin-right: 50px;
-  border: 1px solid black;
-  text-align: center;
-  background: #336B87;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-}
-
 .axis {
   font-size: 15px;
-}
-
-.title {
-  font-size: 24px;
 }
 
 .scatter-title {

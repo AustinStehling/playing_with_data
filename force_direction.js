@@ -27,13 +27,6 @@ d3.csv('./csv/bordering_states.csv')
                   .attr('width', "100%")
                   .attr('height', height)
 
-      // svg.append('text')
-      //   .attr('x', 137)
-      //   .attr('y', 100)
-      //   .attr('font-size', 30)
-      //   .attr('fill', 'lightcoral')
-      //   .text('States and Their Neighbors')
-
       let tick = () => {
         link.attr('x1', (d) => { return d.source.x; })
         .attr('y1', (d) => { return d.source.y; })
