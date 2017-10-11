@@ -140,3 +140,7 @@ img {
               -5px 2px darkgrey,
               -5px 2px darkgrey;
 }
+
+.child-img:hover, .grand-img:hover {
+  transform: skew(-10deg);
+}
