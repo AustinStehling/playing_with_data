@@ -7,7 +7,7 @@ d3.csv("./csv/world_median_age.csv")
     };
   })
   .get((error, data)=> {
-      let height = 600;
+      let height = 700;
       let width = 1000;
       padding = 50;
 
@@ -116,8 +116,9 @@ d3.csv("./csv/world_median_age.csv")
 
       svg.append('text')
         .attr('text-anchor', 'middle')
+        .attr('class', 'scatter-title')
         .attr('transform', 'translate( '+(width/2)+','+-5+')')
-        .attr('font-size', 25)
+        .attr('font-size', 50)
         .text('Countries: Median Age vs Spending Power')
 
   });

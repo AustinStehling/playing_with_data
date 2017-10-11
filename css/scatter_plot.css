@@ -1,7 +1,7 @@
 html, body {
   margin: 0;
   height: 100%;
-  background-color: #F4F4F2;
+  background-color: #F26964;
 }
 
 ul {
@@ -10,6 +10,7 @@ ul {
   background: antiquewhite;
   border-radius: 10px;
 }
+
 li {
   padding-left: 5px;
   padding-right: 5px;
@@ -48,10 +49,18 @@ path {
 
 section {
   width: 1200px;
-  height: 700px;
+  height: 800px;
   /*border-radius: 10px;*/
+  border: 1px solid black;
   margin-top: 100px;
-  background-color: #F4F4F2;
+  background-color: #FFD464;
+  box-shadow: -5px 2px grey,
+              -5px 2px grey,
+              -5px 2px grey,
+              -5px 2px grey,
+              -5px 2px grey;
+  padding-top: 10px;
+  margin-bottom: 20px;
 }
 
 .tooltip {
@@ -152,4 +161,10 @@ a.button-two {
 
 .title {
   font-size: 24px;
+}
+
+.scatter-title {
+  letter-spacing: -3px;
+  text-shadow: 1px 1px grey;
+  fill: #F26964;
 }
