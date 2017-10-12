@@ -139,6 +139,8 @@ img {
               -5px 2px darkgrey,
               -5px 2px darkgrey,
               -5px 2px darkgrey;
+  margin: 0 auto;
+
 }
 
 .child-img:hover, .grand-img:hover {
